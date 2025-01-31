@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Courses</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        *{
+            cursor: pointer;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .page {
+            padding: 20px;
+            margin: auto;
+            margin-top: 12px;
+            max-width: 900px;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            animation: slideIn 0.8s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+        h3, h4, h5, h6 {
+            color: #555;
+        }
+        pre {
+            background: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        ul li {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        .hidden {
+            display: none;
+        }
+        .notes section {
+            margin-bottom: 20px;
+        }
+        .submit-page {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .note-card {
+            background-color: #f0f8ff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .note-card h2 {
+            color: #007BFF;
+        }
+        .note-card p {
+            color: #555;
+        }
+        .note-card ul {
+            padding-left: 25px;
+        }
+        .note-card ul li {
+            color: #333;
+        }
+        .practical {
+            background-color: #e6f7e6;
+            padding: 10px;
+            border: 1px solid #b6d7b6;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .output {
+            background-color: #ffe6e6;
+            padding: 10px;
+            border: 1px solid #ffcccc;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .page-footer {
+            text-align: center;
+            font-size: 14px;
+            color: #888;
+            margin-top: 40px;
+        }
+        .page-footer a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+        .page-footer a:hover {
+            text-decoration: underline;
+        }
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin-top: 20px;
+        }
+        label {
+            font-size: 16px;
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input[type="text"], input[type="email"], input[type="number"], textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            border: 1px dotted black;
+        }
+        button:hover {
+            background-color: #0056b3;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="welcome-page" class="page">
+        <h1>Welcome to Web Development Course</h1>
+        <p>Learn the fundamentals of HTML and build your web development skills! Whether you're starting from scratch or brushing up on your knowledge, this course will guide you through the essential concepts of HTML.</p>
+        <button id="start-button">Start Learning</button>
+    </div>
+
+    <div id="notes-page" class="page hidden">
+        <h1>Web Development Notes</h1>
+        <div class="notes">
+            <!-- Lesson 1 -->
+            <div class="note-card">
+                <h2>Lesson 1: What is HTML?</h2>
+                <p>HTML stands for HyperText Markup Language. It is the standard language used to create webpages and web applications. HTML describes the structure of a web page using markup.</p>
+                <pre>
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;My First Web Page&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Hello, World!&lt;/h1&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+            </pre>
+                <ul>
+                    <li>HTML is easy to learn and widely used.</li>
+                    <li>Every webpage begins with a <strong>&lt;html&gt;</strong> tag.</li>
+                    <li>The <strong>&lt;body&gt;</strong> tag contains the visible content.</li>
+                </ul>
+                <div class="practical">
+                    <h3>Practical:</h3>
+                    <p>Create an HTML file with the above structure and open it in a browser to see the output.</p>
+                </div>
+                <div class="output">
+                    <h3>Expected Output:</h3>
+                    <p>A webpage with the title "My First Web Page" and a heading "Hello, World!".</p>
+                </div>
+            </div>
+            <!-- Lesson 2: Paragraph -->
+            <div class="note-card">
+                <h2>Lesson 2: Paragraphs in HTML</h2>
+                <p>HTML provides a tag named Paragraph - A Paragraph tag is used to gives some paragraphs of sentence in HTML.</p>
+                <pre>
+&lt;Html&gt;
+&lt;body&gt;     
+&lt;p&gt; Hi HTML &lt;/p&gt;
+&lt;p&gt; Hi A Web Page By Siddharth Shandilya &lt;/p&gt;
+&lt;/body&gt;
+&lt;/Html&gt; 
+            </pre>
+                <ul>
+                    <li>Use <strong> &lt;p&gt; </strong> for Paragraph tag.</li>
+                    <li>In Html <strong>&lt;p&gt; and &lt;/p&gt;</strong> plays a major role in a webpage.</li>
+                    <li>It is a common tag which helps to write sentences with breaks in HTML.</li>
+                </ul>
+                <div class="practical">
+                    <h3>Practical:</h3>
+                    <p>Create a webpage which has a paragraphs which shows Your Name.</p>
+                </div>
+                <div class="output">
+                    <h3>Expected Output:</h3>
+                    <p>A page displaying a name which is directly written by the code programer with the help of <strong>&lt;p&gt;</strong>tag.</p>
+                </div>
+            </div>
+            <!-- Lesson 3 : Break line in html  -->
+            <div class="note-card">
+                <h2>Lesson 3: Line Breaks in HTML</h2>
+                <p>HTML provides a tag named Line Break - A Line Break tag gives some distance after a executed code in HTML.</p>
+                <pre>
+&lt;Html&gt;
+&lt;body&gt;     
+&lt;p&gt; Hi Siddharth &lt;/p&gt;&lt;br&gt;
+&lt;p&gt; The HTML is one of the best Language &lt;/p&gt; &lt;br&gt;
+&lt;/body&gt;
+&lt;/Html&gt; 
+            </pre>
+                <ul>
+                    <li>Use <strong> &lt;br&gt; </strong> for Break Line tag.</li>
+                    <li>In Html <strong>&lt;br&gt; </strong> tag is used to give some clarity in a webpage.</li>
+                    <li>It is a common tag which helps to give breaks in HTML.</li>
+                </ul>
+                <div class="practical">
+                    <h3>Practical:</h3>
+                    <p>Create a webpage which has a paragraphs which shows Your Name and use a <strong>&lt;br&gt;</strong> then write any poems after your name, using <strong>&lt;p&gt; and &lt;br&gt;</strong> tags.</p>
+                </div>
+                <div class="output">
+                    <h3>Expected Output:</h3>
+                    <p>A page displaying a Name and a poem with the help of <strong>&lt;p&gt; and &lt;br&gt;</strong>tags.</p>
+                </div>
+            </div>
+            <!-- Lesson 4: Lists -->
+            <div class="note-card">
+                <h2>Lesson 4: Lists in HTML</h2>
+                <p>HTML provides various types of lists to organize information: ordered lists, unordered lists, and description lists.</p>
+                <pre>
+&lt;Html&gt;
+&lt;body&gt; 
+&lt;ul&gt;
+    &lt;li&gt;Apple&lt;/li&gt;
+    &lt;li&gt;Banana&lt;/li&gt;
+    &lt;li&gt;Cherry&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+    &lt;li&gt;First&lt;/li&gt;
+    &lt;li&gt;Second&lt;/li&gt;
+    &lt;li&gt;Third&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;dl&gt;
+    &lt;dt&gt;HTML&lt;/dt&gt;
+    &lt;dd&gt;HyperText Markup Language&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/body&gt;
+&lt;/Html&gt; 
+            </pre>
+                <ul>
+                    <li>Use <strong>&lt;ul&gt;</strong> for unordered lists with bullet points.</li>
+                    <li>Use <strong>&lt;ol&gt;</strong> for ordered lists with numbers.</li>
+                    <li>Use <strong>&lt;dl&gt;</strong> for description lists with terms and descriptions.</li>
+                </ul>
+                <div class="practical">
+                    <h3>Practical:</h3>
+                    <p>Create a webpage to showcase all three types of lists.</p>
+                </div>
+                <div class="output">
+                    <h3>Expected Output:</h3>
+                    <p>A page displaying an unordered list, an ordered list, and a description list.</p>
+                </div>
+            </div>
+            <!--  --><!-- Lesson 5: Anchor -->
+            <div class="note-card">
+                <h2>Lesson 5: Hyperlinks in HTML</h2>
+                <p>HTML provides a tag named Hyperlink - A link is a connection from one Web resource to another.</p>
+                <pre>
+&lt;Html&gt;
+&lt;body&gt;     
+&lt;p&gt; Hi HTML Hyper Text Markup Language &lt;/p&gt;
+&lt;p&gt; Hi A Web Page By Siddharth Shandilya &lt;/p&gt;
+&lt;a herf="http://urlexapmle.com"&gt; Name of URL &lt;/a&gt;
+&lt;/body&gt;
+&lt;/Html&gt; 
+            </pre>
+                <ul>
+                    <li>Use <strong> herf </strong> for placing URL.</li>
+                    <li>In Html <strong>&lt;a&gt;</strong> used for Hyperlinks in a webpage.</li>
+                    <li>Name of URL written after <strong>&lt;a herf=""&gt;</strong> for displaying a name of the provided links in HTML.</li>
+                </ul>
+                <div class="practical">
+                    <h3>Practical:</h3>
+                    <p>Create a webpage which has a Youtube links.</p>
+                </div>
+                <div class="output">
+                    <h3>Expected Output:</h3>
+                    <p>A page displaying a name Youtube which is link of Youtube.com with the help of <strong>&lt;a&gt;</strong>.</p>
+                </div>
+            </div>
+             <!-- Lesson 6: Paragraph -->
+             <div class="note-card">
+                <h2>Lesson 6: Images in HTML</h2>
+                <p>HTML provides a tag named Image - A Image tag is used to gives some images in a webpage.</p>
+                <pre>
+&lt;Html&gt;
+&lt;body&gt;     
+&lt;p&gt; Hi Siddharth &lt;/p&gt;
+&lt;p&gt; A Real Designer's Game &lt;/p&gt;
+&lt;img <strong>src</strong>="Paste the image address" <strong>alt</strong>="Photo1" /&gt;
+&lt;img <strong>src</strong>="" <strong>alt</strong>="Photo2" <strong>height</strong>="2cm", <strong>width</strong>="2cm" /&gt;
+&lt;/body&gt;
+&lt;/Html&gt; 
+            </pre>
+                <ul>
+                    <li>Use <strong> &lt;img&gt; </strong> for Image insertion in a Webpage.</li>
+                    <li>In Html <strong>&lt;img&gt;</strong>tag is used to give some information or beauty in a webpage.</li>
+                    <li>In it <strong>src</strong> is an attribute which gives the address of the image.</li>
+                    <li>And <strong>alt</strong> is an attribute which gives the Name of the image, if the specified image cannot be loaded.</li>
+                    <li>We can also give the <strong>height and width</strong> of the image.</li>
+                </ul>
+                <div class="practical">
+                    <h3>Practical:</h3>
+                    <p>Create a webpage which has a Hyperlink which shows any website's link and place a image below which supports the Hyperlink.</p>
+                </div>
+                <div class="output">
+                    <h3>Expected Output:</h3>
+                    <p>A page displaying a Hyperlink with the help of <strong>&lt;a&gt;</strong>tag and contains a image below, with the help of <strong>&lt;img&gt;</strong> tag.</p>
+                </div>
+            </div>
+            <!-- Lesson 7: Form Example -->
+            <div class="note-card">
+                <h2>Lesson 7: Forms in HTML</h2>
+                <p>HTML forms are used to collect user inputs, such as text, email, and numbers. Here's an example of how to use a simple form in HTML.</p>
+                <pre>
+&lt;Html&gt;
+&lt;body&gt; 
+&lt;form action="submit-form.php" method="POST"&gt;
+    &lt;label for="name"&gt;Name:&lt;/label&gt;
+    &lt;input type="text" id="name" name="name"&gt;
+
+    &lt;label for="email"&gt;Email:&lt;/label&gt;
+    &lt;input type="email" id="email" name="email"&gt;
+
+    &lt;label for="age"&gt;Age:&lt;/label&gt;
+    &lt;input type="number" id="age" name="age"&gt;
+
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+&lt;/body&gt;
+&lt;/Html&gt; 
+                </pre>
+                <ul>
+                    <li>Use <strong>&lt;form&gt;</strong> to define a form.</li>
+                    <li>Use <strong>&lt;input&gt;</strong> fields to get user input.</li>
+                    <li>Submit the form with a <strong>&lt;button&gt;</strong>.</li>
+                </ul>
+                <div class="practical">
+                    <h3>Practical:</h3>
+                    <p>Create a form that collects your name, email, and age, then submit it.</p>
+                </div>
+                <div class="output">
+                    <h3>Expected Output:</h3>
+                    <p>A form that collects user details and submits them.</p>
+                </div>
+            </div>
+             <!-- Lesson 8: HTML Tables -->
+                     <div class="note-card">
+                        <h2> Lesson 8: Tables in HTML</h2>
+                        <p>Tables are used to display data in rows and columns:</p>
+                        <pre>
+&lt;Html&gt;
+&lt;body&gt; 
+&lt;table&gt;
+            &lt;tr&gt;
+                &lt;th&gt;Header 1&lt;/th&gt;
+                &lt;th&gt;Header 2&lt;/th&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Data 1&lt;/td&gt;
+                &lt;td&gt;Data 2&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/table&gt;
+        &lt;/body&gt;
+        &lt;/Html&gt; 
+                        </pre>
+                        <ul>
+                            <li><strong>&lt;table&gt;</strong>: The container for the table.</li>
+                            <li><strong>&lt;tr&gt;</strong>: Table row.</li>
+                            <li><strong>&lt;th&gt;</strong>: Table header cell.</li>
+                            <li><strong>&lt;td&gt;</strong>: Table data cell.</li>
+                        </ul>
+                        <div class="practical">
+                            <h3>Practical:</h3>
+                            <p>Create a tabel which shows your friend's phone number, name and age.</p>
+                        </div>
+                        <div class="output">
+                            <h3>Expected Output:</h3>
+                            <p>A Webpage which have some numbers, name and age, with the help of <strong>&lt;table&gt;</strong> tags.</p>
+                        </div>
+                    </div>
+                    <!-- Input in HTMl  -->
+                    <div class="note-card">
+                        <h2>Lesson 8: Input Fields in HTML</h2>
+                        <p>Input fields are used to capture user data:</p>
+                        <pre>
+&lt;html&gt;
+&lt;body&gt; 
+&lt;div&gt;
+        &lt;label for="name"&gt;Name:&lt;/label&gt;
+        &lt;input type="text" id="name" placeholder="Enter your name"&gt;&lt;br&gt;&lt;br&gt;
+                    
+        &lt;label for="email"&gt;Email:&lt;/label&gt;
+        &lt;input type="email" id="email" placeholder="Enter your email"&gt;&lt;br&gt;&lt;br&gt;
+                    
+        &lt;label for="password"&gt;Password:&lt;/label&gt;
+        &lt;input type="password" id="password" placeholder="Enter your password"&gt;&lt;br&gt;&lt;br&gt;
+                    
+        &lt;button onclick="alert('Submitted!')"&gt;Submit&lt;/button&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+                        <ul>
+                            <li><strong>&lt;label&gt;</strong>: A label associated with an input field.</li>
+                            <li><strong>&lt;input&gt;</strong>: The element used to capture user input.</li>
+                            <li><strong>type</strong>: Specifies the type of input field (e.g., text, email, password).</li>
+                            <li><strong>placeholder</strong>: Provides a hint to the user about what to enter.</li>
+                            <li><strong>&lt;button&gt;</strong>: Creates a clickable button.</li>
+                            <li><strong>onclick</strong>: Adds functionality to the button, such as displaying an alert message.</li>
+                        </ul>
+                        <div class="practical">
+                            <h3>Practical:</h3>
+                            <p>Create a layout with input fields for a user's name, email, and password, along with a button that displays an alert when clicked.</p>
+                        </div>
+                        <div class="output">
+                            <h3>Expected Output:</h3>
+                            <p>A webpage with fields for name, email, and password, and a button that shows an alert when clicked.</p>
+                        </div>
+                    </div>
+                    <!-- Lesson 10 -->
+                    <div class="note-card">
+                        <h2>Lesson 10: Horizontal Rule in HTML</h2>
+                        <p>The horizontal rule, created using the <strong>&lt;hr&gt;</strong> tag, is used to create a thematic break or a visual divider in your content:</p>
+                        <pre>
+&lt;html&gt;
+&lt;body&gt; 
+    &lt;h1&gt;Welcome to Lesson 10&lt;/h1&gt;
+                    
+    &lt;p&gt;This is the first section of text.&lt;/p&gt;
+    &lt;hr&gt;
+    
+    &lt;p&gt;This is the second section of text, separated by a horizontal rule.&lt;/p&gt;
+    &lt;hr style="border: 2px dashed blue;"&gt;
+                    
+    &lt;p&gt;This is the third section of text, with a styled horizontal rule above it.&lt;/p&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;</pre>
+                        <ul>
+                            <li><strong>&lt;hr&gt;</strong>: Inserts a horizontal line to divide sections of content.</li>
+                            <li><strong>style</strong>: Adds custom styling to the horizontal rule (e.g., color, width, or border style).</li>
+                        </ul>
+                        <div class="practical">
+                            <h3>Practical:</h3>
+                            <p>Create a webpage with three sections of text separated by horizontal rules. Add custom styling to at least one of the horizontal rules.</p>
+                        </div>
+                        <div class="output">
+                            <h3>Expected Output:</h3>
+                            <p>A webpage with three sections of text divided by horizontal lines, one of which is styled differently.</p>
+                        </div>
+                    </div>
+                    <!-- Lesson 11 -->
+                    <div class="note-card">
+                        <h2>Lesson 11: Buttons in HTML</h2>
+                        <p>Buttons are an essential part of interactive web elements. In HTML, buttons can be created using the <strong>&lt;button&gt;</strong> tag. You can use buttons in various ways, including for submitting forms or creating clickable actions:</p>
+                        <pre>
+&lt;html&gt;
+&lt;body&gt;
+    &lt;button&gt;Click Me!&lt;/button&gt;
+                        
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+    
+    &lt;button type="reset"&gt;Reset&lt;/button&gt;
+    
+    &lt;a href="https://www.example.com"&gt;
+    &lt;button&gt;Go to Example&lt;/button&gt;
+&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+                        <ul>
+                            <li><strong>&lt;button&gt;</strong>: Defines a clickable button.</li>
+                            <li><strong>type="submit"</strong>: Specifies a submit button within a form.</li>
+                            <li><strong>type="reset"</strong>: Defines a button to reset form fields.</li>
+                            <li><strong>&lt;a&gt;</strong>: Wraps the button to make it behave like a link.</li>
+                        </ul>
+                        <div class="practical">
+                            <h3>Practical:</h3>
+                            <p>Create a webpage with three different buttons: one normal button, one submit button, and one reset button. Test their functionality and see how they work.</p>
+                        </div>
+                        <div class="output">
+                            <h3>Expected Output:</h3>
+                            <p>A webpage with three buttons: one normal, one submit, and one reset. Clicking the submit button will simulate a form submission, and the reset button will reset form fields if included in a form.</p>
+                        </div>
+                    </div>
+                    
+                    
+                    
+
+        </div>
+        <button id="back-button">Back to Welcome</button>
+    </div>
+
+    <div id="submit-page" class="page hidden">
+        <h1>Thank You!</h1>
+        <p>Your form has been successfully submitted.</p>
+        <button id="back-to-home">Back to Home</button>
+    </div>
+
+    <div class="page-footer">
+        <p>Created by <a target="_blank">Siddharth Shandilya&hearts;</a>. All rights reserved.</p>
+        <p> Thanku For Visiting. </p>
+    </div>
+
+    <script>
+        console.log("Welcome to Web Development Course")
+        console.log("A Webpage By Siddharth Shandilya")
+        console.log("CMS")
+        document.getElementById('start-button').addEventListener('click', function() {
+            document.getElementById('welcome-page').classList.add('hidden');
+            document.getElementById('notes-page').classList.remove('hidden');
+        });
+
+        document.getElementById('back-button').addEventListener('click', function() {
+            document.getElementById('notes-page').classList.add('hidden');
+            document.getElementById('welcome-page').classList.remove('hidden');
+        });
+
+        document.getElementById('back-to-home').addEventListener('click', function() {
+            document.getElementById('submit-page').classList.add('hidden');
+            document.getElementById('welcome-page').classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>
+<!-- A Code By Siddharth Shandilya &hearts; -->
